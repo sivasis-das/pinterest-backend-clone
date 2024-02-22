@@ -1,0 +1,4 @@
+data association-------------
+
+connect one model with another model through id's.	
+pass the id of the userid to all the post made by the user, and giving the postId to the user.
