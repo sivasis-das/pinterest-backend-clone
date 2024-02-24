@@ -14,21 +14,32 @@
       <div class="profile-picture">
         <img src="https://i.pinimg.com/280x280_RS/fe/7d/ee/fe7deef834e1fafe56f8023ced803ca9.jpg" alt="Profile Picture">
       </div>
-      <h2 class="name">full name</h2>
-      <h3 class="username">@username</h3>
+      <h2 class="name"><%= userdata.fullname %></h2>
+      <h3 class="username">@<%= userdata.username %></h3>
       <p class="tagline">some taglines</p>
       <p class="description">some description</p>
-      <a href="#" class="button">account settings</a>
+      <a href="/logout" class="button">Log out</a>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" name="filecaption" placeholder="Caption">
+        <input type="file" name="file">
+        <button type="submit">Upload</button>
+      </form>
     </div>
     </div>
-    <div class="container pb-5">
-        <div class="card" style="width: 18rem;">
-            <img src="https://images.unsplash.com/photo-1484406566174-9da000fda645?q=80&w=1378&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              
+    <div class="container pb-5 ">
+      <div class="cards d-flex gap-3 align-items-start ">
+        <% userdata.posts.map(post=>{%>
+            <div class="card" style="width: 18rem;">
+                  <img src="/images/uploads/<%= post.image %>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= post.postText %></h5>
+                    
+                  </div>
             </div>
-          </div>
+     <% }) %>
+      </div>
+      
+        
     </div>
 
     </div>

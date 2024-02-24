@@ -152,3 +152,10 @@ hr {
   border-radius: 20px;
   text-decoration: none;
 }
+
+.error{
+  font-weight: 500;
+  color: #dd1e1e;
+  font-size: large;
+  margin: 7px 0;
+}

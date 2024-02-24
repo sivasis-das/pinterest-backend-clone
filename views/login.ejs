@@ -12,6 +12,13 @@
       <!--pinterest logo-->
       <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
       <p class="header">Log In</p>
+      
+      
+      <% if(error.length > 0) {%>
+        <% console.log(error[0]) %>
+        
+        <p class="error"><%= error[0] %></p>
+      <%} %>
 
       <form action="/login" method="post">
 
